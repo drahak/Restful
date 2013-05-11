@@ -1,7 +1,6 @@
 <?php
 namespace Drahak\Restful\Mapping;
 
-use Drahak\Restful\IMapper;
 use Nette\Object;
 
 /**

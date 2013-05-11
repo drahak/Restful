@@ -1,6 +1,7 @@
 <?php
-namespace Drahak\Restful;
+namespace Drahak\Restful\Application;
 
+use Drahak\Restful\InvalidArgumentException;
 use Reflector;
 
 /**

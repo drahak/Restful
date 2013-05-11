@@ -27,4 +27,10 @@ interface IResource
 	 */
 	public function getData();
 
+	/**
+	 * Delete resource data
+	 * @return IResource
+	 */
+	public function delete();
+
 }

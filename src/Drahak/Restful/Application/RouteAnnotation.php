@@ -1,10 +1,8 @@
 <?php
 namespace Drahak\Restful\Application;
 
-use Drahak\Restful\IAnnotationParser;
-use Drahak\Restful\IResourceRouter;
+use Drahak\Restful\Application\Routes\IResourceRouter;
 use Drahak\Restful\InvalidArgumentException;
-use Drahak\Restful\InvalidStateException;
 use Nette\Http\IRequest;
 use Nette\Object;
 use Nette\Reflection\ClassType;

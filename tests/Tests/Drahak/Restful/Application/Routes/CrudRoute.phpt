@@ -4,7 +4,7 @@ namespace Tests\Drahak\Restful\Application\Routes;
 require_once __DIR__ . '/../../../../bootstrap.php';
 
 use Drahak\Restful\Application\Routes\CrudRoute;
-use Drahak\Restful\IResourceRouter;
+use Drahak\Restful\Application\Routes\IResourceRouter;
 use Nette;
 use Tester;
 use Tester\Assert;

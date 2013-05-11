@@ -1,5 +1,5 @@
 <?php
-namespace Drahak\Restful;
+namespace Drahak\Restful\Application\Routes;
 
 use Nette\Application\IRouter;
 use Nette\Http;

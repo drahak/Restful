@@ -4,7 +4,7 @@ namespace Tests\Drahak\Restful\Application\Routes;
 require_once __DIR__ . '/../../../../bootstrap.php';
 
 use Drahak\Restful\Application\Routes\ResourceRoute;
-use Drahak\Restful\IResourceRouter;
+use Drahak\Restful\Application\Routes\IResourceRouter;
 use Mockista\MockInterface;
 use Nette;
 use Nette\Http\IRequest;

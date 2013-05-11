@@ -2,7 +2,6 @@
 namespace Drahak\Restful\Application\Routes;
 
 use Drahak\Restful\Application\RouteAnnotation;
-use Drahak\Restful\IRouteListFactory;
 use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
 use Nette\Object;

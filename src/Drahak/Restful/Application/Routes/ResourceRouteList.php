@@ -1,7 +1,6 @@
 <?php
 namespace Drahak\Restful\Application\Routes;
 
-use Drahak\Restful\IResourceRouter;
 use Drahak\Restful\InvalidStateException;
 use Nette\Application\Routers\RouteList;
 

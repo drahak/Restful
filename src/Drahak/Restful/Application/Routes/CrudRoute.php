@@ -1,8 +1,6 @@
 <?php
 namespace Drahak\Restful\Application\Routes;
 
-use Drahak\Restful\IResourceRouter;
-
 /**
  * Resource CrudRoute to simple resource creation
  * @package Drahak\Restful\Routes

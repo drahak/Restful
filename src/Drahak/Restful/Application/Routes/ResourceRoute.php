@@ -1,7 +1,6 @@
 <?php
 namespace Drahak\Restful\Application\Routes;
 
-use Drahak\Restful\IResourceRouter;
 use Nette\Application\Routers\Route;
 use Nette\Http;
 

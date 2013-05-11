@@ -1,8 +1,5 @@
 <?php
-namespace Drahak\Restful;
-
-use Drahak\Restful\Application\Routes\ResourceRouteList;
-use Nette\Caching\IStorage;
+namespace Drahak\Restful\Application\Routes;
 
 /**
  * IRouteListFactory

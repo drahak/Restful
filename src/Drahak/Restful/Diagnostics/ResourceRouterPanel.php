@@ -1,13 +1,13 @@
 <?php
 namespace Drahak\Restful\Diagnostics;
 
-use Drahak\Restful\IResourceRouter;
+use Traversable;
+use Drahak\Restful\Application\Routes\IResourceRouter;
 use Nette\Application\IRouter;
 use Nette\Templating\Helpers;
 use Nette\Diagnostics\IBarPanel;
 use Nette\Object;
 use Nette\Utils\Html;
-use Tester\Dumper;
 
 /**
  * ResourceRouterPanel to see REST API resource routes
@@ -33,7 +33,7 @@ class ResourceRouterPanel extends Object implements IBarPanel
 	{
 		$resourceRoutes = array();
 		foreach ($routeList as $route) {
-			if ($route instanceof \Traversable)
+			if ($route instanceof Traversable)
 				$resourceRoutes += $this->getResourceRoutes($route);
 			if ($route instanceof IResourceRouter)
 				$resourceRoutes[] = $route;

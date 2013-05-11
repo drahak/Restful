@@ -1,7 +1,7 @@
 <?php
 namespace Drahak\Restful\Application\Responses;
 
-use Drahak\Restful\IMapper;
+use Drahak\Restful\Mapping\IMapper;
 use Drahak\Restful\Mapping\XmlMapper;
 use Nette\Application\IResponse;
 use Nette\Object;

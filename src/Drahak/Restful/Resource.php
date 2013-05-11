@@ -63,6 +63,16 @@ class Resource extends Object implements ArrayAccess, Serializable, IResource
 		return $this->data;
 	}
 
+	/**
+	 * Delete resource data
+	 * @return IResource
+	 */
+	public function delete()
+	{
+		$this->data = array();
+		return $this;
+	}
+
 	/******************** Serializable ********************/
 
 	/**

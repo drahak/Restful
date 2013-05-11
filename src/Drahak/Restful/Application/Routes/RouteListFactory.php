@@ -2,8 +2,6 @@
 namespace Drahak\Restful\Application\Routes;
 
 use Drahak\Restful\Application\RouteAnnotation;
-use Drahak\Restful\IResourceRouter;
-use Drahak\Restful\IRouteListFactory;
 use Drahak\Restful\InvalidStateException;
 use Nette\Caching\IStorage;
 use Nette\DI\Container;
@@ -37,7 +35,7 @@ class RouteListFactory extends Object implements IRouteListFactory
 		$loader = new RobotLoader();
 		$loader->addDirectory($routeConfig['presentersRoot']);
 		$loader->setCacheStorage($cacheStorage);
-		$loader->tryLoad('Drahak\Restful\IResourcePresenter');
+		$loader->tryLoad('Drahak\Restful\Application\IResourcePresenter');
 
 		$this->loader = $loader;
 		$this->routeConfig = $routeConfig;

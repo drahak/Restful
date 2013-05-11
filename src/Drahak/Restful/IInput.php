@@ -1,6 +1,8 @@
 <?php
 namespace Drahak\Restful;
 
+use Drahak\Restful\Mapping\IMapper;
+
 /**
  * REST client request Input interface
  * @package Drahak\Restful

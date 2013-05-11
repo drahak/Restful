@@ -1,7 +1,5 @@
 <?php
-namespace Drahak\Restful;
-
-use Drahak\Restful\Mapping\MappingException;
+namespace Drahak\Restful\Mapping;
 
 /**
  * Resource data mapper interface

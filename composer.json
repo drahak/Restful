@@ -29,7 +29,8 @@
 		},
 		"classmap": [
 			"src/Drahak/Restful/exceptions.php",
-			"src/Drahak/Restful/Mapping/exceptions.php"
+			"src/Drahak/Restful/Mapping/exceptions.php",
+			"src/Drahak/Restful/Security/exceptions.php"
 		]
 	}
 }

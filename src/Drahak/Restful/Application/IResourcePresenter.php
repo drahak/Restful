@@ -1,5 +1,5 @@
 <?php
-namespace Drahak\Restful;
+namespace Drahak\Restful\Application;
 
 use Nette\Application\IPresenter;
 

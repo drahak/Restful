@@ -1,9 +1,7 @@
 <?php
 namespace Drahak\Restful\Mapping;
 
-use Drahak\Restful\IMapper;
 use Drahak\Restful\InvalidArgumentException;
-use Drahak\Restful\InvalidStateException;
 use Nette\Object;
 
 /**
