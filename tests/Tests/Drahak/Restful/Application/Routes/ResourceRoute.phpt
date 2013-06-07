@@ -57,6 +57,7 @@ class ResourceRouteTest extends TestCase
 	public function testOtherRequestMethods()
 	{
 		Assert::false($this->route->isMethod(IResourceRouter::HEAD));
+		Assert::false($this->route->isMethod(IResourceRouter::PATCH));
 	}
 
 	public function testActionDictionary()

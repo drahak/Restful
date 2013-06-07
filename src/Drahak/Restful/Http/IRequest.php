@@ -20,4 +20,16 @@ interface IRequest extends Nette\Http\IRequest
 	 */
 	public function getOriginalMethod();
 
+	/**
+	 * Is this request JSONP
+	 * @return bool
+	 */
+	public function isJsonp();
+
+	/**
+	 * Get JSONP parameter value
+	 * @return string|NULL
+	 */
+	public function getJsonp();
+
 }

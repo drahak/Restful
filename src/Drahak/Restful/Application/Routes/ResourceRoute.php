@@ -49,7 +49,11 @@ class ResourceRoute extends Route implements IResourceRouter
 	 */
 	public function isMethod($method)
 	{
-		return ($this->flags & $method) == $method;
+		$common = array(self::CRUD, self::RESTFUL);
+		$isActionDefined = $this->actionDictionary && !in_array($method, $common) ?
+			isset($this->actionDictionary[$method]) :
+			TRUE;
+		return ($this->flags & $method) == $method && $isActionDefined;
 	}
 
 	/**
@@ -105,10 +109,6 @@ class ResourceRoute extends Route implements IResourceRouter
 
 		// If there is action dictionary, set method
 		if ($this->actionDictionary) {
-			if (!isset($this->actionDictionary[$methodFlag])) {
-				return NULL;
-			}
-
 			$parameters = $appRequest->getParameters();
 			$parameters['action'] = $this->actionDictionary[$methodFlag];
 			$appRequest->setParameters($parameters);

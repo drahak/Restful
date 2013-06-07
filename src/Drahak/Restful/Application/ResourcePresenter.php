@@ -28,6 +28,7 @@ abstract class ResourcePresenter extends UI\Presenter implements IResourcePresen
 	protected $formats = array(
 		'json' => IResource::JSON,
 		'xml' => IResource::XML,
+		'jsonp' => IResource::JSONP,
 		'query' => IResource::QUERY,
 		'data_url' => IResource::DATA_URL
 	);

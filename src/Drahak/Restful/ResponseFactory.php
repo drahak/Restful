@@ -2,7 +2,9 @@
 namespace Drahak\Restful;
 
 use Drahak\Restful\IResource;
-use Nette\Application\IResponse;
+use Drahak\Restful\Http\IRequest;
+use Drahak\Restful\Resource\EnvelopeDecorator;
+use Nette\Http\IResponse;
 use Nette\Object;
 
 /**
@@ -13,14 +15,27 @@ use Nette\Object;
 class ResponseFactory extends Object implements IResponseFactory
 {
 
+	/** @var IResponse */
+	private $response;
+
+	/** @var IRequest */
+	private $request;
+
 	/** @var array */
 	private $responses = array(
 		IResource::JSON => 'Nette\Application\Responses\JsonResponse',
+		IResource::JSONP => 'Drahak\Restful\Application\Responses\JsonpResponse',
 		IResource::QUERY => 'Drahak\Restful\Application\Responses\QueryResponse',
 		IResource::XML => 'Drahak\Restful\Application\Responses\XmlResponse',
 		IResource::DATA_URL => 'Drahak\Restful\Application\Responses\DataUrlResponse',
 		IResource::NULL => 'Drahak\Restful\Application\Responses\NullResponse'
 	);
+
+	public function __construct(IResponse $response, IRequest $request)
+	{
+		$this->response = $response;
+		$this->request = $request;
+	}
 
 	/**
 	 * Register new response type to factory
@@ -64,6 +79,10 @@ class ResponseFactory extends Object implements IResponseFactory
 
 		if (!class_exists($this->responses[$contentType])) {
 			throw new InvalidStateException('API response class does not exist.');
+		}
+
+		if ($this->request->isJsonp()) {
+			$contentType = IResource::JSONP;
 		}
 
 		$responseClass = $this->responses[$contentType];

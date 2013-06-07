@@ -6,12 +6,13 @@ namespace Drahak\Restful;
  * @package Drahak\Restful
  * @author Drahomír Hanák
  */
-interface IResource
+interface IResource extends IDataResource
 {
 
 	/** Result types */
 	const XML = 'application/xml';
 	const JSON = 'application/json';
+	const JSONP = 'application/javascript';
 	const QUERY = 'text/x-query';
 	const DATA_URL = 'application/x-data-url';
 	const NULL = 'NULL';
@@ -21,11 +22,5 @@ interface IResource
 	 * @return string
 	 */
 	public function getContentType();
-
-	/**
-	 * Get result set data
-	 * @return array|\stdClass|\Traversable
-	 */
-	public function getData();
 
 }
