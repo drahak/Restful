@@ -15,9 +15,9 @@ class CrudRoute extends ResourceRoute
 	const ACTION_UPDATE = 'update';
     const ACTION_DELETE = 'delete';
 
-    public function __construct($mask, $presenter = '', $flags = IResourceRouter::CRUD)
+    public function __construct($mask, $metadata = '', $flags = IResourceRouter::CRUD)
     {
-        parent::__construct($mask, $presenter . ':default', $flags);
+        parent::__construct($mask, is_string($metadata) ? $metadata . ':default' : $metadata, $flags);
         $this->actionDictionary = array(
             IResourceRouter::POST => self::ACTION_CREATE,
             IResourceRouter::GET => self::ACTION_READ,
