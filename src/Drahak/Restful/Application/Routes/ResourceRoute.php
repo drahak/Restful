@@ -135,23 +135,6 @@ class ResourceRoute extends Route implements IResourceRouter
 	}
 
 	/**
-	 * @param Application\Request $appRequest
-	 * @param Http\Url $refUrl
-	 * @return NULL|string
-	 */
-	public function constructUrl(Application\Request $appRequest, Http\Url $refUrl)
-	{
-		$url = parent::constructUrl($appRequest, $refUrl);
-		if ($url === NULL) {
-			return NULL;
-		}
-
-		$httpUrl = new Http\Url($url);
-		$httpUrl->query = Strings::replace($httpUrl->query, '/action=([a-zA-Z0-9_+%-]*)/i', '');
-		return $httpUrl->getAbsoluteUrl();
-	}
-
-	/**
 	 * Format action name
 	 * @param string $action
 	 * @param array $parameters
