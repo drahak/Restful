@@ -40,7 +40,7 @@ class XmlMapperTest extends TestCase
 	{
 		$data = array('hello', 'world');
 		$xml = $this->mapper->stringify($data);
-		
+
 		$dom = Tester\DomQuery::fromXml($xml);
 		$items = $dom->find('root item');
 		Assert::equal(count($items), 2);
@@ -101,7 +101,7 @@ class XmlMapperTest extends TestCase
 	{
 		$array = $this->mapper->parse('<?xml version="1.0" encoding="utf-8" ?><root><node>value</node></root>');
 		Assert::equal($array['node'], 'value');
-	} 
+	}
 
 	public function testConvertsXmlRecursivelyToArray()
 	{
@@ -141,7 +141,7 @@ class XmlMapperTest extends TestCase
 		Assert::equal($array['user']['phone'], '');
 		Assert::equal($array['user']['friends'], '');
 	}
-	
+
 	public function testRemoveAttributes()
 	{
 		$array = $this->mapper->parse('<?xml version="1.0" encoding="UTF-8"?>
@@ -168,7 +168,7 @@ class XmlMapperTest extends TestCase
 		$data = array('node' => 'value');
 		$this->mapper->stringify($data);
 		$xml = $this->mapper->stringify($data);
-		
+
 		$dom = Tester\DomQuery::fromXml($xml);
 		$nodes = $dom->find('root node');
 		Assert::equal(count($nodes), 1);
@@ -180,6 +180,23 @@ class XmlMapperTest extends TestCase
 		$xml = $this->mapper->stringify($data, FALSE);
 
 		Assert::equal(trim($xml), "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root><node>ěščřžýáíé</node></root>");
+	}
+
+	public function testConvertDataArrayToXmlAndBack()
+	{
+		$data = array(
+			'user' => array(
+				array(
+					array('id' => 1, 'name' => 'Tester'),
+					array('id' => 2, 'name' => 'Test')
+				)
+			)
+		);
+
+		$xml = $this->mapper->stringify($data);
+		$array = $this->mapper->parse($xml);
+
+		Assert::equal($array, $data);
 	}
 
 }
