@@ -25,4 +25,9 @@ interface IResource
 	 */
 	public function getData();
 
+	/**
+	 * Get info if the resource has some data set or is empty
+	 * @return boolean
+	 */
+	public function hasData();
 }
