@@ -2,7 +2,6 @@
 namespace Drahak\Restful\Validation;
 
 use Nette\Object;
-use Nette\Utils\Validators;
 
 /**
  * Validation field
@@ -150,10 +149,10 @@ class Field extends Object implements IField
 	 * @param mixed $value
 	 * @return mixed
 	 */
-	protected function parseNumericValue($value)
+	public function parseNumericValue($value)
 	{
-		if (Validators::isNumericInt($value)) return (int)$value;
-		if (Validators::isNumeric($value)) return (float)$value;
+		if (filter_var($value, FILTER_VALIDATE_INT)) return (int)$value;
+		if (filter_var($value, FILTER_VALIDATE_FLOAT)) return (float)$value;
 		return $value;
 	}
 

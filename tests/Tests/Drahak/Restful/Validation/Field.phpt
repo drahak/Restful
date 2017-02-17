@@ -109,5 +109,13 @@ class FieldTest extends TestCase
 		Assert::false($required);
 	}
 
+	public function testParseNumericValue()
+	{
+		Assert::true(is_int($this->field->parseNumericValue("2147483647"))); //maximum int value
+		Assert::same($this->field->parseNumericValue("2147483648"), 2147483648); //float
+		Assert::false(is_int($this->field->parseNumericValue("2147483648")));
+		Assert::true(is_float($this->field->parseNumericValue("2147483647.01")));
+		Assert::true(is_float($this->field->parseNumericValue("-2147483647.01")));
+	}
 }
 \run(new FieldTest());
