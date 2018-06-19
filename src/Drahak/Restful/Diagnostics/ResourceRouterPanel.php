@@ -1,13 +1,12 @@
 <?php
 namespace Drahak\Restful\Diagnostics;
 
-use Traversable;
 use Drahak\Restful\Application\IResourceRouter;
 use Nette\Application\IRouter;
 use Nette\Templating\Helpers;
-use Tracy\IBarPanel;
-use Nette\Object;
 use Nette\Utils\Html;
+use Tracy\IBarPanel;
+use Traversable;
 
 if (!interface_exists('Tracy\IBarPanel')) {
 	class_alias('Nette\Diagnostics\IBarPanel', 'Tracy\IBarPanel');
@@ -18,7 +17,7 @@ if (!interface_exists('Tracy\IBarPanel')) {
  * @package Drahak\Restful\Diagnostics
  * @author Drahomír Hanák
  */
-class ResourceRouterPanel extends Object implements IBarPanel
+class ResourceRouterPanel implements IBarPanel
 {
 
 	/** @var IRouter */

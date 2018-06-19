@@ -1,16 +1,12 @@
 <?php
 namespace Drahak\Restful\Mapping;
 
-use Nette\Object;
-use Nette\Http\Url;
-use Nette\Utils\Strings;
-
 /**
  * Query string mapper
  * @package Drahak\Restful\Mapping
  * @author Drahomír Hanák
  */
-class QueryMapper extends Object implements IMapper
+class QueryMapper implements IMapper
 {
 
 	/**

@@ -1,16 +1,15 @@
 <?php
 namespace Drahak\Restful\Converters;
 
-use Nette\Object;
-use Traversable;
 use DateTime;
+use Traversable;
 
 /**
  * DateTimeConverter
  * @package Drahak\Restful\Converters
  * @author Drahomír Hanák
  */
-class DateTimeConverter extends Object implements IConverter
+class DateTimeConverter implements IConverter
 {
 
 	/** DateTime format */

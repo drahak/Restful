@@ -4,7 +4,6 @@ namespace Drahak\Restful\Application;
 use Drahak\Restful\Application\Routes\ResourceRouteList;
 use Nette\Caching\Cache;
 use Nette\Caching\IStorage;
-use Nette\Object;
 use Nette\Utils\Finder;
 
 /**
@@ -12,7 +11,7 @@ use Nette\Utils\Finder;
  * @package Drahak\Restful\Application\Routes
  * @author Drahomír Hanák
  */
-final class CachedRouteListFactory extends Object implements IRouteListFactory
+final class CachedRouteListFactory implements IRouteListFactory
 {
 
 	/** Cache name */

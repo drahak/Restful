@@ -1,16 +1,15 @@
 <?php
 namespace Drahak\Restful\Mapping;
 
-use Nette\Object;
-use Nette\Utils\Strings;
 use Drahak\Restful\InvalidStateException;
+use Nette\Utils\Strings;
 
 /**
  * MapperContext
  * @package Drahak\Restful\Mapping
  * @author Drahomír Hanák
  */
-class MapperContext extends Object
+class MapperContext
 {
 
 	/** @var array */

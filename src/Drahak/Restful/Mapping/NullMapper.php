@@ -1,14 +1,13 @@
 <?php
 namespace Drahak\Restful\Mapping;
 
-use Nette\Object;
 
 /**
  * NullMapper
  * @package Drahak\Restful\Mapping
  * @author Drahomír Hanák
  */
-class NullMapper extends Object implements IMapper
+class NullMapper implements IMapper
 {
 
 	/**

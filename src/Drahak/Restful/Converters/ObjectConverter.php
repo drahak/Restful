@@ -1,17 +1,16 @@
 <?php
 namespace Drahak\Restful\Converters;
 
+use Drahak\Restful\IResource;
 use stdClass;
 use Traversable;
-use Nette\Object;
-use Drahak\Restful\IResource;
 
 /**
  * ObjectConverter
  * @package Drahak\Restful\Converters
  * @author Drahomír Hanák
  */
-class ObjectConverter extends Object implements IConverter
+class ObjectConverter implements IConverter
 {
 
 	/**

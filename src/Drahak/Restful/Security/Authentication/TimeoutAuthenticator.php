@@ -1,7 +1,6 @@
 <?php
 namespace Drahak\Restful\Security\Authentication;
 
-use Nette\Object;
 use Drahak\Restful\Http\IInput;
 use Drahak\Restful\Security\RequestTimeoutException;
 
@@ -10,7 +9,7 @@ use Drahak\Restful\Security\RequestTimeoutException;
  * @package Drahak\Restful\Security\Authentication
  * @author Drahomír Hanák
  */
-class TimeoutAuthenticator extends Object implements IRequestAuthenticator
+class TimeoutAuthenticator implements IRequestAuthenticator
 {
 
 	/** @var string */

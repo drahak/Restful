@@ -1,9 +1,8 @@
 <?php
 namespace Drahak\Restful\Validation;
 
-use Nette\Object;
-use Nette\Utils\Validators;
 use Nette\Utils\Strings;
+use Nette\Utils\Validators;
 
 /**
  * ValidationScope
@@ -12,7 +11,7 @@ use Nette\Utils\Strings;
  *
  * @property-read IValidator $validator
  */
-class ValidationScope extends Object implements IValidationScope
+class ValidationScope implements IValidationScope
 {
 
 	/** @var IValidator */

@@ -1,22 +1,21 @@
 <?php
 namespace Drahak\Restful\Http;
 
+use Drahak\Restful\Application\BadRequestException;
 use Drahak\Restful\InvalidStateException;
 use Drahak\Restful\Mapping\IMapper;
 use Drahak\Restful\Mapping\MapperContext;
 use Drahak\Restful\Mapping\MappingException;
 use Drahak\Restful\Validation\IValidationScopeFactory;
-use Drahak\Restful\Application\BadRequestException;
-use Nette\Http\IRequest;
-use Nette\Object;
 use Nette;
+use Nette\Http\IRequest;
 
 /**
  * InputFactory
  * @package Drahak\Restful\Http
  * @author Drahomír Hanák
  */
-class InputFactory extends Object
+class InputFactory
 {
 
 	/** @var IRequest */

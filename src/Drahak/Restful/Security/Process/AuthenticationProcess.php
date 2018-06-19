@@ -1,7 +1,6 @@
 <?php
 namespace Drahak\Restful\Security\Process;
 
-use Nette\Object;
 use Drahak\Restful\Http\IInput;
 
 /**
@@ -9,7 +8,7 @@ use Drahak\Restful\Http\IInput;
  * @package Drahak\Restful\Security\Process
  * @author Drahomír Hanák
  */
-abstract class AuthenticationProcess extends Object
+abstract class AuthenticationProcess
 {
 
 	/**

@@ -1,14 +1,13 @@
 <?php
 namespace Drahak\Restful\Validation;
 
-use Nette\Object;
 
 /**
  * ValidationScopeFactory
  * @package Drahak\Restful\Validation
  * @author Drahomír Hanák
  */
-class ValidationScopeFactory extends Object implements IValidationScopeFactory
+class ValidationScopeFactory implements IValidationScopeFactory
 {
 
 	/** @var IValidator */

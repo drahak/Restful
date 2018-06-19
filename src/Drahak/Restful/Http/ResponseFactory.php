@@ -1,14 +1,12 @@
 <?php
 namespace Drahak\Restful\Http;
 
+use Drahak\Restful\InvalidStateException;
 use Drahak\Restful\Resource\Link;
 use Drahak\Restful\Utils\RequestFilter;
-use Drahak\Restful\InvalidStateException;
-use Nette\Http\IResponse;
 use Nette\Http\IRequest;
+use Nette\Http\IResponse;
 use Nette\Http\Response;
-use Nette\Http\Url;
-use Nette\Object;
 use Nette\Utils\Paginator;
 
 /**
@@ -16,7 +14,7 @@ use Nette\Utils\Paginator;
  * @package Drahak\Restful\Http
  * @author Drahomír Hanák
  */
-class ResponseFactory extends Object
+class ResponseFactory
 {
 
 	/** @var IRequest */

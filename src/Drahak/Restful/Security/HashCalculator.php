@@ -5,7 +5,6 @@ use Drahak\Restful\Http\IInput;
 use Drahak\Restful\InvalidStateException;
 use Drahak\Restful\Mapping\IMapper;
 use Drahak\Restful\Mapping\MapperContext;
-use Nette\Object;
 use Nette\Http\IRequest;
 
 /**
@@ -15,7 +14,7 @@ use Nette\Http\IRequest;
  *
  * @property-write string $privateKey
  */
-class HashCalculator extends Object implements IAuthTokenCalculator
+class HashCalculator implements IAuthTokenCalculator
 {
 
 	/** Fingerprint hash algorithm */
