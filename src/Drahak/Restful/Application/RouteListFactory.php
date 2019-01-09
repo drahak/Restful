@@ -42,15 +42,22 @@ class RouteListFactory extends Object implements IRouteListFactory
 	/**
 	 * @param string $presentersRoot from where to find presenters
 	 * @param bool $autoRebuild enable automatic rebuild of robot loader
+     * @param string $cacheDir from where to find cache directory
 	 * @param IStorage $cacheStorage
 	 * @param RouteAnnotation $routeAnnotation
 	 */
-	public function __construct($presentersRoot, $autoRebuild, IStorage $cacheStorage, RouteAnnotation $routeAnnotation)
+	public function __construct($presentersRoot, $autoRebuild, $cacheDir, IStorage $cacheStorage, RouteAnnotation $routeAnnotation)
 	{
 		$loader = new RobotLoader();
 		$loader->addDirectory($presentersRoot);
-		$loader->setCacheStorage($cacheStorage);
-		$loader->autoRebuild = $autoRebuild;
+		// From version >=3.0.0, there's no setCacheStorage method
+		if (method_exists($loader, 'setCacheStorage')) {
+			$loader->setCacheStorage($cacheStorage);
+			$loader->autoRebuild = $autoRebuild;
+		} else {
+			$loader->setAutoRefresh($autoRebuild);
+			$loader->setTempDirectory($cacheDir);
+		}
 		$loader->tryLoad('Drahak\Restful\Application\IResourcePresenter');
 
 		$this->loader = $loader;
